@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Kopi Chat</title>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-responsive.min.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+</head>
+<body>
+
+<div class="container-narrow">
+  <div class="masthead">
+    <ul class ="nav nav-pills pull-right">
+      <li class="active">
+        <a href="@routes.Application.index()">Home</a>
+      </li>
+      <li>
+        <a href="#">About </a>
+      </li>
+    </ul>
+    <h3 class="muted">Kopi Chat</h3>
+  </div>
+
+  <hr>
+
+  <div id="overview" class="jumbotron">
+      <h1>Kopi Chat</h1>
+      <p class="lead">Demonstrating the power of the Play Framework and the usage of websockets</p>
+      <a class="btn btn-large btn-success" href="@routes.Google.authenticate">Login</a>
+  </div>
+
+  <div class="row-fluid marketing">
+
+    <div class="span6">
+      <div class="alert-message block-message info">
+        <p>
+        <strong>Kopi</strong> 
+        To start, login using your google account
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <hr>
+
+  <div class="footer">
+    <div class="container">
+      <p>
+        Another small project by @@soulofpeace
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+</body>
+</html>

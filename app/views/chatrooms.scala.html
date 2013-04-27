@@ -1,0 +1,39 @@
+@(page:String, user:User, chatrooms:List[ChatRoom])
+
+@main{
+  <div class="container">
+    <h2>
+      Chatroom joined
+    </h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      @chatrooms.zipWithIndex.map{chatroomContainer =>
+      <tr>
+        <td>
+          @chatroomContainer._2
+        </td>
+        <td>
+          @chatroomContainer._1.name
+        </td>
+        <td>
+          <a href="@chatroomContainer._1.enterUrl" class="btn btn-primary">Enter</a>
+        </td>
+      </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+}(user)(page)

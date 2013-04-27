@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file                               controllers.Assets.at(path="/public", file)
+
+GET    /                                           controllers.Application.index
+GET    /admin                                      controllers.Application.admin
+GET    /chatrooms                                  controllers.Application.chatrooms 
+GET    /logout                                     controllers.Application.logout
+GET    /authenticate                               controllers.Google.authenticate
+GET    /oauth2callback                             controllers.Google.callback
+PUT    /chatroom/create/                           controllers.ChatRoomController.createChatRoom
+GET    /chatroom/:chatRoomId/show                  controllers.ChatRoomController.show(chatRoomId:String)
+GET    /chatroom/join/:chatRoomId                  controllers.ChatRoomController.joinChatRoom(chatRoomId:String)
+GET    /chatroom/chat/:chatRoomId/user/:userId     controllers.ChatRoomController.chat(chatRoomId:String, userId:String)
+POST   /chatroom/:chatRoomId/leave                 controllers.ChatRoomController.leaveChatRoom(chatRoomId:String)
+DELETE /chatroom/delete/                           controllers.ChatRoomController.deleteChatRoom
+POST   /chatroom/update/                           controllers.ChatRoomController.updateChatRoom
+GET    /chatroom/list/                             controllers.ChatRoomController.listChatRooms

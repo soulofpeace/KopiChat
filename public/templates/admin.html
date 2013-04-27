@@ -1,0 +1,43 @@
+<script id="chatroom-template" type ="text/html">
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a id="name-{{id}}" class="accordion-toggle" data-toggle="collapse" data-parent="#chatrooms" href="#collapse-{{id}}">
+      {{name}}
+    </a>
+  </div>
+  <div id="collapse-{{id}}" class="accordion-body collapse">
+    <div class="accordion-inner">
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="name">Chatroom id</label>
+          <div class=controls>
+            {{id}}
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Chatroom Name</label>
+          <div class=controls>
+            <input type="text" id="{{id}}-name" value="{{name}}">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Created Date</label>
+          <div class=controls>
+            {{createdDate}}
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Updated Date</label>
+          <div class=controls>
+            {{updatedDate}}
+          </div>
+        </div>
+        <div class="control-group">
+          <button type="submit" class="btn btn-primary" id="{{id}}-update">Update</button>
+          <button type="submit" class="btn btn-danger" id="{{id}}-delete">Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</script>

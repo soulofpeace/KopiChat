@@ -1,0 +1,89 @@
+@(page:String, user:User, chatroomsJson:String)
+
+@main{
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs nav-pills">
+    <li class="active"><a href="#create" data-toggle="tab">Create New Chatroom</a></li>
+    <li><a href="#manage" data-toggle="tab"> Manage Chatroom</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="create">
+      <div class="container alert-container">
+      </div>
+      <form class="form-horizontal">
+        <legend>Create new Chatroom</legend>
+        <div class="control-group">
+          <label class="control-label" for="name">Chatroom Name</label>
+          <div class=controls>
+            <input type="text" id="name" placeholder="name">
+          </div>
+        </div>
+        <div class="control-group">
+          <button type="submit" class="btn">Create</button>
+        </div>
+      </form>
+    </div>
+    <div class="tab-pane" id="manage">
+      <div class="container alert-container">
+      </div>
+      <div class="accordion" id="chatrooms">
+      </div>
+    </div>
+  </div> 
+</div> 
+<script src="@routes.Assets.at("javascripts/mustache.js")" type ="text/javascript"></script> 
+<script src="@routes.Assets.at("javascripts/admin.min.js")" type="text/javascript"></script>
+<script id="chatroom-template" type ="text/html">
+<div class="accordion-group" id={{id}}>
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#chatrooms" href="#collapse-{{id}}">
+      {{name}}
+    </a>
+  </div>
+  <div id="collapse-{{id}}" class="accordion-body collapse">
+    <div class="accordion-inner">
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="name">Chatroom id</label>
+          <div class=controls>
+              <input type="text" name="id" id="{{id}}-id" value="{{id}}" readonly>
+              <input type="hidden" name="creatorId" id="{{id}}-creatorId" value="{{creatorId}}">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Chatroom Name</label>
+          <div class=controls>
+            <input type="text" id="{{id}}-name" value="{{name}}">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Chatroom Invite Url</label>
+          <div class=controls>
+            <a href="{{inviteUrl}}">{{fullUrl}}</a>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Created Date</label>
+          <div class=controls>
+              <input type="text" name="createdDate" id="{{id}}-createdDate" value="{{createdDate}}" readonly>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="name">Updated Date</label>
+          <div class=controls>
+              <input type="text" name="updatedDate" id="{{id}}-updatedDate" value="{{updatedDate}}" readonly>
+          </div>
+        </div>
+        <div class="control-group">
+          <button type="submit" class="btn btn-primary" id="{{id}}-update">Update</button>
+          <button type="submit" class="btn btn-danger" id="{{id}}-delete">Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</script>
+<script type="text/javascript">
+  renderChatroom(@Html(chatroomsJson))
+</script>
+}(user)(page)

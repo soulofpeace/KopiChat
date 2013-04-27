@@ -1,0 +1,103 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+#onError, #onChat{
+  display: none
+}
+
+.message span {
+  overflow: hidden;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: -1px;
+}
+
+.message p {
+  display: inline-block;
+  margin: 0;
+}
+
+.message.me {
+  background: #FFC;
+}
+
+.message.join, .message.quit {
+  background: #D9E7FB;
+}
+
+#onChat .span9,
+#onChat .span3 {
+  min-height: 500px;
+}
+
+#onChat .span3 {
+  padding-left: 9px;
+  margin-left: 10px;
+  border-left: 1px solid #eee;
+}
+
+#talk {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 40px;
+}
+
+#message{
+  position: absolute;
+  bottom: 60px;
+}
+
+/* Page header tweaks */                                                                                                                                                                          
+.page-header {                                                                                                                                                                                    
+  background-color: #f5f5f5;                                                                                                                                                                    
+  padding: 20px 20px 10px;                                                                                                                                                                      
+  margin: -20px -20px 20px;                                                                                                                                                                     
+}     
+
+#main {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
